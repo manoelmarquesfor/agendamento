@@ -1,0 +1,19 @@
+
+services:
+  agendamento:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - DATASOURCE_HOST=${DATASOURCE_HOST}
+      - DATASOURCE_PORT=${DATASOURCE_PORT}
+      - DATASOURCE_DB=${DATASOURCE_DB}
+      - DATASOURCE_USERNAME=${DATASOURCE_USERNAME}
+      - DATASOURCE_PASSWORD=${DATASOURCE_PASSWORD}
+    
+    networks:
+      - agendamento-network
+
+networks:
+  agendamento-network:
+    driver: bridge
