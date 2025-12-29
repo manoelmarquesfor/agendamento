@@ -1,0 +1,32 @@
+
+@URL = http://localhost:8080/agendamentos
+
+###
+GET {{URL}}/ HTTP/1.1
+Content-Type: application/json
+
+###
+GET {{URL}}/d2a873ea-32d7-4afd-bbaa-169f15ad19d3 HTTP/1.1
+Content-Type: application/json
+
+###
+POST  {{URL}}/ HTTP/1.1
+Content-Type: application/json
+
+{
+"descricao": "Consulta medica",
+"dataAgendamento": "2026-12-03 19:00:40"
+}
+
+
+###
+// Marca o agendamento como Concluido
+PUT  {{URL}}/90126e9f-ae7f-473c-bc7e-da03e86517d6 HTTP/1.1
+Content-Type: application/json
+
+
+
+###
+// Marca o agendamento como CANCELADO
+DELETE {{URL}}/d2a873ea-32d7-4afd-bbaa-169f15ad19d3 HTTP/1.1
+Content-Type: application/json
